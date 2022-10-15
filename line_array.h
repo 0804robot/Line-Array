@@ -20,7 +20,6 @@ public:
     void init();
     // read value from the array
     int readValue();
-    ~LineArray();
 };
 
 #endif
