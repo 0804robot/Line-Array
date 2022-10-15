@@ -8,6 +8,7 @@ LineArray::LineArray(int s_1, int s_2, int s_3, int s_4, int s_5)
     sen_3 = s_3;
     sen_4 = s_4;
     sen_5 = s_5;
+    previous_position = 0;
 }
 //initialization fumction
 void LineArray::init()
@@ -21,5 +22,18 @@ void LineArray::init()
 // read value function
 int LineArray::readValue()
 {
-    return ((digitalRead(sen_1)*-2)+(digitalRead(sen_2)*-1)+(digitalRead(sen_3)*0)+(digitalRead(sen_4)*1)+(digitalRead(sen_5)*2));
+    int linePosition[5];
+    linePosition[0] = 1 - digitalRead(sen_1);            //read infrared reflectance sensors
+    linePosition[1] = 1 - digitalRead(sen_2);
+    linePosition[2] = 1 - digitalRead(sen_3);
+    linePosition[3] = 1 - digitalRead(sen_4);
+    linePosition[4] = 1 - digitalRead(sen_5);
+  
+    int pos = linePosition[0] * 4 + linePosition[1] * 3 + linePosition[2]  * 2 + linePosition[3] * 1 + linePosition[4] * 0;
+    if (linePosition[0] == 0 && linePosition[1] == 0 && linePosition[2] ==  0 && linePosition[3] == 0 && linePosition[4] == 0){
+        return previous_position;
+    }
+    pos = 2 - (pos /(linePosition[0] + linePosition[1] + linePosition[2] + linePosition[3] + linePosition[4]));
+    previous_position = pos;
+    return pos;
 }

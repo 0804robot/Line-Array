@@ -12,6 +12,7 @@ private:
     int sen_3;
     int sen_4;
     int sen_5;
+    int previous_position;
 
 public:
 // constructor takes pins as arguments
