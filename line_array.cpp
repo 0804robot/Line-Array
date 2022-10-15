@@ -1,7 +1,5 @@
 #include <line_array.h>
 
-
-
 //constructor
 LineArray::LineArray(int s_1, int s_2, int s_3, int s_4, int s_5)
 {
@@ -23,5 +21,5 @@ void LineArray::init()
 // read value function
 int LineArray::readValue()
 {
-    return ((DigitalRead(sen_1)*-2)+(DigitalRead(sen_2)*-1)+(DigitalRead(sen_3)*0)+(DigitalRead(sen_4)*1)+(DigitalRead(sen_5)*2));
+    return ((digitalRead(sen_1)*-2)+(digitalRead(sen_2)*-1)+(digitalRead(sen_3)*0)+(digitalRead(sen_4)*1)+(digitalRead(sen_5)*2));
 }
