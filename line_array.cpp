@@ -23,6 +23,5 @@ void LineArray::init()
 // read value function
 int LineArray::readValue()
 {
-    return ((DigitalRead(sen_1)*-2)+(DigitalRead(sen_2)*-1)+(DigitalRead(sen_3)*0)+
-    (DigitalRead(sen_4)*1)+(DigitalRead(sen_5)*2);
+    return ((DigitalRead(sen_1)*-2)+(DigitalRead(sen_2)*-1)+(DigitalRead(sen_3)*0)+(DigitalRead(sen_4)*1)+(DigitalRead(sen_5)*2));
 }
