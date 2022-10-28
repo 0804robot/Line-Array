@@ -1,0 +1,30 @@
+{
+  "name": "Line-Array",
+  "version": "1.0.0",
+  "description": "line following infrared array",
+  "keywords": "line following",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/0804robot/Line-Array.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Felix Wanyoike",
+      "email": "",
+      "maintainer": true
+    },
+    {
+      "name": "Sammy Oina",
+      "email": "sammyoina@gmail.com",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+  },
+  "frameworks": "*",
+  "platforms": "*"
+}

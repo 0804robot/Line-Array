@@ -33,7 +33,7 @@ int LineArray::readValue()
     if (linePosition[0] == 0 && linePosition[1] == 0 && linePosition[2] ==  0 && linePosition[3] == 0 && linePosition[4] == 0){
         return previous_position;
     }else if (linePosition[0] == 1 && linePosition[1] == 1 && linePosition[2] ==  1 && linePosition[3] == 1 && linePosition[4] == 1){
-        return previous_position;
+        return 10;
     }
     pos = 2 - (pos /(linePosition[0] + linePosition[1] + linePosition[2] + linePosition[3] + linePosition[4]));
     previous_position = pos;
