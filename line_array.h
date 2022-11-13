@@ -14,6 +14,8 @@ private:
     int sen_5;
     int previous_position;
 
+    void CheckForCheckpoints(int linePos[5]);
+
 public:
 // constructor takes pins as arguments
     LineArray(int s_1, int s_2, int s_3, int s_4, int s_5);
@@ -21,6 +23,8 @@ public:
     void init();
     // read value from the array
     int readValue();
+
+    int checkpoint_count;
 };
 
 #endif
