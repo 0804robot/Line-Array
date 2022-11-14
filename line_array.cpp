@@ -10,6 +10,7 @@ LineArray::LineArray(int s_1, int s_2, int s_3, int s_4, int s_5)
     sen_5 = s_5;
     previous_position = 0;
     checkpoint_count = 0;
+    lost_line_count = 0;
 }
 //initialization fumction
 void LineArray::init()
@@ -33,6 +34,7 @@ int LineArray::readValue()
     this->CheckForCheckpoints(linePosition);
     int pos = linePosition[0] * 4 + linePosition[1] * 3 + linePosition[2]  * 2 + linePosition[3] * 1 + linePosition[4] * 0;
     if (linePosition[0] == 0 && linePosition[1] == 0 && linePosition[2] ==  0 && linePosition[3] == 0 && linePosition[4] == 0){
+        lost_line_count++;
         return previous_position;
     }else if (linePosition[0] == 1 && linePosition[1] == 1 && linePosition[2] ==  1 && linePosition[3] == 1 && linePosition[4] == 1){
         return 10;

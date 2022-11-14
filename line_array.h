@@ -25,6 +25,8 @@ public:
     int readValue();
 
     int checkpoint_count;
+
+    int lost_line_count;
 };
 
 #endif
