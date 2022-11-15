@@ -22,7 +22,7 @@ public:
     // initialize pins
     void init();
     // read value from the array
-    int readValue();
+    int readValue(int state);
 
     int checkpoint_count;
 

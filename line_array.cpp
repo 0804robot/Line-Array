@@ -22,7 +22,7 @@ void LineArray::init()
     pinMode(sen_5, INPUT);
 }
 // read value function
-int LineArray::readValue()
+int LineArray::readValue(int state)
 {
     int linePosition[5];
     linePosition[0] = 1 - digitalRead(sen_1);            //read infrared reflectance sensors
@@ -38,6 +38,10 @@ int LineArray::readValue()
         return previous_position;
     }else if (linePosition[0] == 1 && linePosition[1] == 1 && linePosition[2] ==  1 && linePosition[3] == 1 && linePosition[4] == 1){
         return 10;
+    }else if (linePosition[0] ==  1 && linePosition[1] == 1 && linePosition[2] == 1 && state == 1){
+        return previous_position;
+    }else if(linePosition[2] ==  1 && linePosition[3] == 1 && linePosition[4] == 1 && state == 1){
+        return previous_position;
     }
     pos = 2 - (pos /(linePosition[0] + linePosition[1] + linePosition[2] + linePosition[3] + linePosition[4]));
     previous_position = pos;
